@@ -29,9 +29,13 @@
             ],
             "styles": [
               "src/styles.scss",
-              "TaskManager/node_modules/bootstrap/dist/css/bootstrap.css"
+              "TaskManager/node_modules/bootstrap/dist/css/bootstrap.css",
+              "TaskManager/node_modules/bootstrap/dist/css/font-awesome.css"
             ],
-            "scripts": []
+            "scripts": [
+              "TaskManager/node_modules/jquery/dist/jquery.js",
+              "TaskManager/node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
