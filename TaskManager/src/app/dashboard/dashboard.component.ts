@@ -14,10 +14,10 @@ export class DashboardComponent implements OnInit {
   TotalCostOfAllProjects: number;
   PendingTasks: number;
   UpComingProjects: number;
-  ProjectCosts: number;
+  ProjectCost: number;
 
   CurrentExpenditure: number;
-  AvaliableFunds: number;
+  AvailableFunds: number;
 
   ngOnInit() {
     this.Designation = "Team Leader";
@@ -26,9 +26,9 @@ export class DashboardComponent implements OnInit {
     this.TotalCostOfAllProjects = 240;
     this.PendingTasks = 15;
     this.UpComingProjects = 2;
-    this.ProjectCosts = 21115254;
+    this.ProjectCost = 21115254;
     this.CurrentExpenditure = 9785665;
-    this.AvaliableFunds = 58569;
+    this.AvailableFunds = 58569;
 
   }
 
