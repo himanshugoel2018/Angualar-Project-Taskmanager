@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   ProjectCost: number;
   CurrentExpenditure: number;
   AvailableFunds: number;
+  Today: Date;
 
   Clients: string[];
   Projects: string[];
@@ -30,11 +31,11 @@ export class DashboardComponent implements OnInit {
     this.NoofTeamMembers = 67;
     this.TotalCostOfAllProjects = 240;
     this.PendingTasks = 15;
-    this.UpComingProjects = 2;
+    this.UpComingProjects = 0.2;
     this.ProjectCost = 2113507;
     this.CurrentExpenditure = 96788;
     this.AvailableFunds = 52436;
-
+    this.Today = new Date();
 
     this.Clients = [
       "ABC Infotech Ltd.", "DEF Software Solutions", "GHI Industries"
@@ -93,28 +94,23 @@ export class DashboardComponent implements OnInit {
   }
 
 
-   onProjectChange($event)
-  {
-    if($event.target.innerHTML.trim() == "Project A")
-    {
+  onProjectChange($event) {
+    if ($event.target.innerHTML.trim() == "Project A") {
       this.ProjectCost = 2113507;
       this.CurrentExpenditure = 96788;
       this.AvailableFunds = 52436;
     }
-    else if($event.target.innerHTML.trim() == "Project B")
-    {
+    else if ($event.target.innerHTML.trim() == "Project B") {
       this.ProjectCost = 88923;
       this.CurrentExpenditure = 22450;
       this.AvailableFunds = 2640;
     }
-    else if($event.target.innerHTML.trim() == "Project C")
-    {
+    else if ($event.target.innerHTML.trim() == "Project C") {
       this.ProjectCost = 662183;
       this.CurrentExpenditure = 7721;
       this.AvailableFunds = 9811;
     }
-    else if($event.target.innerHTML.trim() == "Project D")
-    {
+    else if ($event.target.innerHTML.trim() == "Project D") {
       this.ProjectCost = 928431;
       this.CurrentExpenditure = 562;
       this.AvailableFunds = 883;

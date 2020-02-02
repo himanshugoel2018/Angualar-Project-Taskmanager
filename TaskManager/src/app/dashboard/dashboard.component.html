@@ -6,17 +6,19 @@
 </nav>
 
 <h5>Dashboard</h5>
+<h6>{{Today | date: "mediumDate"}}</h6>
 <div class="row">
     <div class="col-lg-3 pb-3" style="background-color:#e9e6e6;">
         <div class="row">
             <div class="col-11 text-white text-center mx-auto rounded pt-2 pb-2 font-weight-bold"
-                style="background-color:#a39e9e; font-family:  'Arial Narrow Bold', sans-serif">{{Designation}}
+                style="background-color:#a39e9e; font-family:  'Arial Narrow Bold', sans-serif">
+                {{Designation | uppercase}}
             </div>
             <div class="col-12 text-center mt-2">
                 <img src="assets/user.png" width="120px">
             </div>
             <div class="col-12 text-center pt-2 pb-2 font-weight-bold" style="font-family: Tahoma">
-                {{Username}}
+                {{Username | lowercase}}
             </div>
             <div class="col-12 text-center pt-2 pb-2" style="font-family: Arial">TEAM SUMMARY</div>
             <div class="col-12 mb-3">
@@ -37,14 +39,14 @@
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         UPCOMING PROJECTS
                         <span class="badge badge-secondary badge-pill"
-                            style="font-size:13px">{{UpComingProjects}}</span>
+                            style="font-size:13px">{{UpComingProjects | percent}}</span>
                     </li>
                 </ul>
             </div>
             <div class="col-12 text-center pt-2 pb-2" style="font-family: 'Arial Narrow'">CLIENTS</div>
             <div class="col-12">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" *ngFor="let client of Clients">{{client}}</li>
+                    <li class="list-group-item" *ngFor="let client of Clients">{{client | slice: 0: 10}}</li>
                 </ul>
             </div>
         </div>
@@ -82,15 +84,15 @@
                         <table class="table table-borderless">
                             <tr>
                                 <td>Project Cost</td>
-                                <td>${{ProjectCost}}</td>
+                                <td>{{ProjectCost | currency: "INR"}}</td>
                             </tr>
                             <tr>
                                 <td>Current Expenditure</td>
-                                <td>${{CurrentExpenditure}}</td>
+                                <td>{{CurrentExpenditure | currency: "INR"}}</td>
                             </tr>
                             <tr>
                                 <td>Available Funds</td>
-                                <td>${{AvailableFunds}}</td>
+                                <td>{{AvailableFunds | currency : "INR" }}</td>
                             </tr>
                         </table>
                     </div>
