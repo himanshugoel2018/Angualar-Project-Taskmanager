@@ -14,7 +14,9 @@ import { AdminModule } from './admin/admin.module';
     AppRoutingModule,
     AdminModule
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
