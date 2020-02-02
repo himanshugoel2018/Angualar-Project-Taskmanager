@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NumberSymbol } from '@angular/common';
+import { DashboardService } from 'src/app/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,6 +25,10 @@ export class DashboardComponent implements OnInit {
   Years: number[] = [];
   TeamMembersSummary = [];
   TeamMembers = [];
+
+  constructor(private dashboardService: DashboardService) {
+
+  }
 
   ngOnInit() {
     this.Designation = "Team Leader";
@@ -50,12 +55,7 @@ export class DashboardComponent implements OnInit {
       this.Years.push(i);
     }
 
-    this.TeamMembersSummary = [
-      { Region: "East", TeamMembersCount: 20, TemporarilyUnavailableMembers: 4 },
-      { Region: "West", TeamMembersCount: 15, TemporarilyUnavailableMembers: 8 },
-      { Region: "South", TeamMembersCount: 17, TemporarilyUnavailableMembers: 1 },
-      { Region: "North", TeamMembersCount: 15, TemporarilyUnavailableMembers: 6 }
-    ];
+    this.TeamMembersSummary = this.dashboardService.getTeamMembersSummary();
 
     this.TeamMembers = [
       {
