@@ -31,9 +31,9 @@ export class DashboardComponent implements OnInit {
     this.TotalCostOfAllProjects = 240;
     this.PendingTasks = 15;
     this.UpComingProjects = 2;
-    this.ProjectCost = 21115254;
-    this.CurrentExpenditure = 9785665;
-    this.AvailableFunds = 58569;
+    this.ProjectCost = 2113507;
+    this.CurrentExpenditure = 96788;
+    this.AvailableFunds = 52436;
 
 
     this.Clients = [
