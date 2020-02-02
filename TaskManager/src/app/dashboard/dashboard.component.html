@@ -44,9 +44,7 @@
             <div class="col-12 text-center pt-2 pb-2" style="font-family: 'Arial Narrow'">CLIENTS</div>
             <div class="col-12">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ABC Infotech Ltd</li>
-                    <li class="list-group-item">2 ABC Infotech Ltd</li>
-                    <li class="list-group-item">3 ABC Infotech Ltd</li>
+                    <li class="list-group-item" *ngFor="let client of Clients">{{client}}</li>
                 </ul>
             </div>
         </div>
@@ -62,10 +60,7 @@
                                 Project A
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#"> Project A</a>
-                                <a class="dropdown-item" href="#"> Project B</a>
-                                <a class="dropdown-item" href="#"> Project C</a>
-                                <a class="dropdown-item" href="#"> Project D</a>
+                                <a class="dropdown-item" href="#" *ngFor="let project of Projects"> {{project}}</a>
                             </div>
                         </div>
                     </div>
@@ -76,10 +71,7 @@
                                 2019
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#"> 2019</a>
-                                <a class="dropdown-item" href="#"> 2018</a>
-                                <a class="dropdown-item" href="#"> 2017</a>
-                                <a class="dropdown-item" href="#"> 2016</a>
+                                <a class="dropdown-item" href="#" *ngFor="let year of Years"> {{year}}</a>
                             </div>
                         </div>
                     </div>
@@ -110,48 +102,15 @@
                                 <th>Team Members Count</th>
                                 <th>Temporarily Unavailable Members</th>
                             </tr>
-                            <tr>
+                            <tr *ngFor="let teamMemberSummary of TeamMembersSummary">
                                 <td>
-                                    <b>East</b>
+                                    <b>{{teamMemberSummary.Region}}</b>
                                 </td>
                                 <td>
-                                    23
+                                    {{teamMemberSummary.TeamMembersCount}}
                                 </td>
                                 <td>
-                                    4
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>West</b>
-                                </td>
-                                <td>
-                                    34
-                                </td>
-                                <td>
-                                    3
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>North</b>
-                                </td>
-                                <td>
-                                    57
-                                </td>
-                                <td>
-                                    7
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>South</b>
-                                </td>
-                                <td>
-                                    57
-                                </td>
-                                <td>
-                                    3
+                                    {{teamMemberSummary.TemporarilyUnavailableMembers}}
                                 </td>
                             </tr>
                         </table>
