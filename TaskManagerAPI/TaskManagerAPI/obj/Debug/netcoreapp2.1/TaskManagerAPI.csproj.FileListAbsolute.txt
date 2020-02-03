@@ -1,0 +1,14 @@
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\bin\Debug\netcoreapp2.1\TaskManagerAPI.deps.json
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\bin\Debug\netcoreapp2.1\TaskManagerAPI.runtimeconfig.json
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\bin\Debug\netcoreapp2.1\TaskManagerAPI.runtimeconfig.dev.json
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\bin\Debug\netcoreapp2.1\TaskManagerAPI.dll
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.csprojAssemblyReference.cache
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.csproj.CoreCompileInputs.cache
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.RazorAssemblyInfo.cache
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.RazorAssemblyInfo.cs
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.AssemblyInfoInputs.cache
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.AssemblyInfo.cs
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.RazorTargetAssemblyInfo.cache
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\bin\Debug\netcoreapp2.1\TaskManagerAPI.pdb
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.dll
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.pdb
