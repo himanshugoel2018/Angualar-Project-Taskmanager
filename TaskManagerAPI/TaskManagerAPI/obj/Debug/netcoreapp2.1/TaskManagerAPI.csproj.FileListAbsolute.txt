@@ -12,3 +12,12 @@ C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\Task
 C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.dll
 C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.pdb
 C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\bin\Debug\netcoreapp2.1\TaskManagerAPI.Views.dll
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\bin\Debug\netcoreapp2.1\TaskManagerAPI.Views.pdb
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.TagHelpers.input.cache
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.TagHelpers.output.cache
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.RazorCoreGenerate.cache
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.RazorTargetAssemblyInfo.cs
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.Views.pdb
+C:\Users\hgoel4\hgoel\LS\github\Angualar-Project-Taskmanager\TaskManagerAPI\TaskManagerAPI\obj\Debug\netcoreapp2.1\TaskManagerAPI.csproj.CopyComplete
