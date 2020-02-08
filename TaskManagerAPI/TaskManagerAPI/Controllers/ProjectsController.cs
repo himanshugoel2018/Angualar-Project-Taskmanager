@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using TaskManagerAPI.Models;
 
 namespace TaskManagerAPI.Controllers
 {
+    [EnableCors("AllowOrigin")]
     public class ProjectsController : Controller
     {
+        
         [HttpGet]
         [Route("api/projects")]
         public List<Project> Get()
