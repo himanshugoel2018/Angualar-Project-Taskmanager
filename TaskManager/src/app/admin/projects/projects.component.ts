@@ -48,10 +48,8 @@ export class ProjectsComponent implements OnInit {
   onUpdateClick() {
     this.projectService.updateProject(this.editProject).subscribe(
       (response: Project) => {
-        var p: Project = new Project();
-        p = response;
-        this.projects[this.editIndex] = p;
-        this.editProject = null;
+        this.projects[this.editIndex] = response;
+        // this.editProject = null;
       }, () => { }, () => { }
     )
   }
