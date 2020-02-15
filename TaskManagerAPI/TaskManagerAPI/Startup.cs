@@ -19,7 +19,7 @@ namespace TaskManagerAPI
 			services.AddEntityFrameworkSqlServer();
 			services.AddCors(c =>
 			{
-				c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+				c.AddPolicy("AllowAll", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 			});
 		}
 

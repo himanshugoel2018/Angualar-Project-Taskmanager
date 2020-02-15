@@ -8,7 +8,7 @@ using TaskManagerAPI.Models;
 
 namespace TaskManagerAPI.Controllers
 {
-    [EnableCors("AllowOrigin")]
+    [EnableCors("AllowAll")]
     public class ProjectsController : Controller
     {
         
