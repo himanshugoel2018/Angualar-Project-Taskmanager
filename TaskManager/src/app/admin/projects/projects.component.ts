@@ -25,10 +25,17 @@ export class ProjectsComponent implements OnInit {
   onSaveClick() {
     this.projectService.insertProject(this.newProject).subscribe(
       (response) => {
-        this.projects.push(this.newProject);
+        this.projects.push(response);
       },
-      (error) => { console.log(error); }
+      (error) => { console.log(error); },
+      () => {
+        this.newProject.projectID = null;
+        this.newProject.projectName = null;
+        this.newProject.dateOfStart = null;
+        this.newProject.teamSize = null;
+      }
     );
+
   }
 
 }
