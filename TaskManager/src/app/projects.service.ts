@@ -14,4 +14,9 @@ export class ProjectsService {
     // return this.httpclient.get<Project[]>('/api/projects');
     return this.httpclient.get<Project[]>('http://localhost:1762/api/projects');
   }
+
+  insertProject(newProject: Project): Observable<Project> {
+    // return this.httpclient.get<Project[]>('/api/projects');
+    return this.httpclient.post<Project>('http://localhost:1762/api/projects', newProject);
+  }
 }
