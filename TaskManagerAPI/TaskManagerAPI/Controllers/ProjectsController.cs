@@ -58,5 +58,24 @@ namespace TaskManagerAPI.Controllers
 			}
 
 		}
+
+		[HttpDelete]
+		[Route("api/projects")]
+		public int Delete(int projectID)
+		{
+			TaskManagerDbContext db = new TaskManagerDbContext();
+			Project existingProject = db.Projects.Where(t => t.projectID == projectID).FirstOrDefault();
+			if (existingProject != null)
+			{
+				db.Projects.Remove(existingProject);
+				db.SaveChanges();
+				return projectID;
+
+			}
+			else
+			{
+				return -1;
+			}
+		}
 	}
 }
