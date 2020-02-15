@@ -22,4 +22,8 @@ export class ProjectsService {
   updateProject(existingProject: Project): Observable<Project> {
     return this.httpclient.put<Project>('http://localhost:1762/api/projects', existingProject);
   }
+
+  deleteProject(projectID: number): Observable<string> {
+    return this.httpclient.delete<string>('http://localhost:1762/api/projects?projectID=' + projectID);
+  }
 }
