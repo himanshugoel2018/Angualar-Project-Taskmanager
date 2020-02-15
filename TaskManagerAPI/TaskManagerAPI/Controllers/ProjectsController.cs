@@ -35,5 +35,23 @@ namespace TaskManagerAPI.Controllers
 
 			return project;
 		}
+
+		[HttpPut]
+		[Route("api/projects")]
+		public Project Put([FromBody] Project project)
+		{
+			TaskManagerDbContext db = new TaskManagerDbContext();
+			Project existingProject = db.Projects.Where(t => t.projectID == project.projectID).FirstOrDefault();
+			if (existingProject != null)
+			{
+				existingProject.projectName = project.projectName;
+				existingProject.teamSize = project.teamSize;
+				existingProject.dateOfStart = project.dateOfStart;
+
+				db.SaveChanges();
+			}
+
+			return existingProject ;
+		}
 	}
 }

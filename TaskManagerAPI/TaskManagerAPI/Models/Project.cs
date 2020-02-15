@@ -11,6 +11,8 @@ namespace TaskManagerAPI.Models
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		public int projectID { get; set; }
 		public string projectName { get; set; }
+
+		[DisplayFormat(DataFormatString = "d/M/yyyy")]
 		public DateTime dateOfStart { get; set; }
 		public int teamSize { get; set; }
 	}
