@@ -11,6 +11,8 @@ export class ProjectsComponent implements OnInit {
 
   projects: Project[];
   newProject: Project = new Project();
+  editProject: Project = new Project();
+  editIndex: number = null;
 
   constructor(private projectService: ProjectsService) { }
 
@@ -36,6 +38,22 @@ export class ProjectsComponent implements OnInit {
       }
     );
 
+  }
+
+  onEditClick(event, index: number) {
+    this.editProject = this.projects[index];
+    this.editIndex = index;
+  }
+
+  onUpdateClick() {
+    this.projectService.updateProject(this.editProject).subscribe(
+      (response: Project) => {
+        var p: Project = new Project();
+        p = response;
+        this.projects[this.editIndex] = p;
+        this.editProject = null;
+      }, () => { }, () => { }
+    )
   }
 
 }
