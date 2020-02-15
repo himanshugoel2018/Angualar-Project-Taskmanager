@@ -22,6 +22,27 @@ namespace TaskManagerAPI.Controllers
 		}
 
 
+		[HttpGet]
+		[Route("api/projects/search/{searchby}/{searchtext}")]
+		public List<Project> Search(string searchby, string searchtext)
+		{
+			TaskManagerDbContext db = new TaskManagerDbContext();
+			List<Project> projects = null;
+			if (searchby == "projectID")
+				projects = db.Projects.Where(x => x.projectID.ToString().Contains(searchtext)).ToList();
+			else if (searchby == "projectName")
+				projects = db.Projects.Where(x => x.projectName.ToString().Contains(searchtext)).ToList();
+			else if (searchby == "dateOfStart")
+				projects = db.Projects.Where(x => x.dateOfStart.ToString().Contains(searchtext)).ToList();
+			else if (searchby == "teamSize")
+				projects = db.Projects.Where(x => x.teamSize.ToString().Contains(searchtext)).ToList();
+			else
+				projects = db.Projects.ToList();
+
+			return projects;
+		}
+
+
 		[HttpPost]
 		[Route("api/projects")]
 		public Project Posts([FromBody] Project project)

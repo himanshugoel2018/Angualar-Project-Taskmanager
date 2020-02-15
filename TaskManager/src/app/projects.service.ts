@@ -26,4 +26,8 @@ export class ProjectsService {
   deleteProject(projectID: number): Observable<string> {
     return this.httpclient.delete<string>('http://localhost:1762/api/projects?projectID=' + projectID);
   }
+
+  searchProject(searchby: string, searchtext: string): Observable<Project[]> {
+    return this.httpclient.get<Project[]>('http://localhost:1762/api/projects/search/' + searchby + '/' + searchtext);
+  }
 }
