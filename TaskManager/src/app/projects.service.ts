@@ -16,7 +16,6 @@ export class ProjectsService {
   }
 
   insertProject(newProject: Project): Observable<Project> {
-    // return this.httpclient.get<Project[]>('/api/projects');
     return this.httpclient.post<Project>('http://localhost:1762/api/projects', newProject);
   }
 }
