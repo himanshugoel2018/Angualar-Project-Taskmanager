@@ -20,5 +20,16 @@ namespace TaskManagerAPI.Controllers
             List<Project> projects = db.Projects.ToList();
             return projects;
         }
+
+
+        [HttpPost]
+        [Route("api/projects")]
+        public Project Posts(Project project)
+        {
+            TaskManagerDbContext db = new TaskManagerDbContext();
+            db.Add(project);
+            db.SaveChanges();
+            return project;
+        }
     }
 }
