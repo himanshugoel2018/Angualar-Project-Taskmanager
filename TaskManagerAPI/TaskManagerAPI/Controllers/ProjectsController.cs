@@ -49,9 +49,14 @@ namespace TaskManagerAPI.Controllers
 				existingProject.dateOfStart = project.dateOfStart;
 
 				db.SaveChanges();
+				return existingProject;
+
+			}
+			else
+			{
+				return null;
 			}
 
-			return existingProject ;
 		}
 	}
 }
