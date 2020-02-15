@@ -9,10 +9,10 @@ namespace TaskManagerAPI.Models
 	{
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
-		public int ProjectID { get; set; }
-		public string ProjectName { get; set; }
-		public DateTime DateOfStart { get; set; }
-		public int TeamSize { get; set; }
+		public int projectID { get; set; }
+		public string projectName { get; set; }
+		public DateTime dateOfStart { get; set; }
+		public int teamSize { get; set; }
 	}
 
 	public class TaskManagerDbContext : DbContext

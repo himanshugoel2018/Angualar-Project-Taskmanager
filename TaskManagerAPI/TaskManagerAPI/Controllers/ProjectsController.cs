@@ -8,28 +8,32 @@ using TaskManagerAPI.Models;
 
 namespace TaskManagerAPI.Controllers
 {
-    [EnableCors("AllowAll")]
-    public class ProjectsController : Controller
-    {
-        
-        [HttpGet]
-        [Route("api/projects")]
-        public List<Project> Get()
-        {
-            TaskManagerDbContext db = new TaskManagerDbContext();
-            List<Project> projects = db.Projects.ToList();
-            return projects;
-        }
+	[EnableCors("AllowAll")]
+	public class ProjectsController : Controller
+	{
+
+		[HttpGet]
+		[Route("api/projects")]
+		public List<Project> Get()
+		{
+			TaskManagerDbContext db = new TaskManagerDbContext();
+			List<Project> projects = db.Projects.ToList();
+			return projects;
+		}
 
 
-        [HttpPost]
-        [Route("api/projects")]
-        public Project Posts(Project project)
-        {
-            TaskManagerDbContext db = new TaskManagerDbContext();
-            db.Add(project);
-            db.SaveChanges();
-            return project;
-        }
-    }
+		[HttpPost]
+		[Route("api/projects")]
+		public Project Posts([FromBody] Project project)
+		{
+			TaskManagerDbContext db = new TaskManagerDbContext();
+			if (!string.IsNullOrEmpty(project.projectName))
+			{
+				db.Projects.Add(project);
+				db.SaveChanges();
+			}
+
+			return project;
+		}
+	}
 }
