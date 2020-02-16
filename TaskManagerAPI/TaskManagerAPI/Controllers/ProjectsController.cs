@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using TaskManagerAPI.Identity;
 using TaskManagerAPI.Models;
 
 namespace TaskManagerAPI.Controllers
@@ -11,12 +12,17 @@ namespace TaskManagerAPI.Controllers
 	[EnableCors("AllowAll")]
 	public class ProjectsController : Controller
 	{
+		private ApplicationDbContext db;
+
+		public ProjectsController(ApplicationDbContext db)
+		{
+			this.db = db;
+		}
 
 		[HttpGet]
 		[Route("api/projects")]
 		public List<Project> Get()
 		{
-			TaskManagerDbContext db = new TaskManagerDbContext();
 			List<Project> projects = db.Projects.ToList();
 			return projects;
 		}
@@ -26,7 +32,6 @@ namespace TaskManagerAPI.Controllers
 		[Route("api/projects/search/{searchby}/{searchtext}")]
 		public List<Project> Search(string searchby, string searchtext)
 		{
-			TaskManagerDbContext db = new TaskManagerDbContext();
 			List<Project> projects = null;
 			if (searchby == "projectID")
 				projects = db.Projects.Where(x => x.projectID.ToString().Contains(searchtext)).ToList();
@@ -47,7 +52,6 @@ namespace TaskManagerAPI.Controllers
 		[Route("api/projects")]
 		public Project Posts([FromBody] Project project)
 		{
-			TaskManagerDbContext db = new TaskManagerDbContext();
 			if (!string.IsNullOrEmpty(project.projectName))
 			{
 				db.Projects.Add(project);
@@ -61,7 +65,6 @@ namespace TaskManagerAPI.Controllers
 		[Route("api/projects")]
 		public Project Put([FromBody] Project project)
 		{
-			TaskManagerDbContext db = new TaskManagerDbContext();
 			Project existingProject = db.Projects.Where(t => t.projectID == project.projectID).FirstOrDefault();
 			if (existingProject != null)
 			{
@@ -84,7 +87,6 @@ namespace TaskManagerAPI.Controllers
 		[Route("api/projects")]
 		public int Delete(int projectID)
 		{
-			TaskManagerDbContext db = new TaskManagerDbContext();
 			Project existingProject = db.Projects.Where(t => t.projectID == projectID).FirstOrDefault();
 			if (existingProject != null)
 			{

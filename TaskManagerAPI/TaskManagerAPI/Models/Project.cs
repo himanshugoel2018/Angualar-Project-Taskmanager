@@ -17,14 +17,14 @@ namespace TaskManagerAPI.Models
 		public int teamSize { get; set; }
 	}
 
-	public class TaskManagerDbContext : DbContext
-	{
-		public DbSet<Project> Projects { get; set; }
+	//public class TaskManagerDbContext : DbContext
+	//{
+	//	public DbSet<Project> Projects { get; set; }
 
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			base.OnConfiguring(optionsBuilder);
-			optionsBuilder.UseSqlServer("data source=LHTU05CG8335W82\\SQLEXPRESS2014; integrated security=yes; initial catalog = TaskManager");
-		}
-	}
+	//	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+	//	{
+	//		base.OnConfiguring(optionsBuilder);
+	//		optionsBuilder.UseSqlServer("data source=LHTU05CG8335W82\\SQLEXPRESS2014; integrated security=yes; initial catalog = TaskManager");
+	//	}
+	//}
 }
