@@ -28,8 +28,8 @@ export class ProjectsComponent implements OnInit {
         this.projects = response;
       },
       (error) => {
-        console.log(error);
-        alert("Authentication Failed");
+        // console.log(error);
+        // alert("Authentication Failed");
       }
     );
   }
