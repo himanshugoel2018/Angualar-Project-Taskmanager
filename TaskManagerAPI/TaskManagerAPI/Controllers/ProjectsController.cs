@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using TaskManagerAPI.Identity;
@@ -10,6 +11,8 @@ using TaskManagerAPI.Models;
 namespace TaskManagerAPI.Controllers
 {
 	[EnableCors("AllowAll")]
+	[Authorize]
+
 	public class ProjectsController : Controller
 	{
 		private ApplicationDbContext db;

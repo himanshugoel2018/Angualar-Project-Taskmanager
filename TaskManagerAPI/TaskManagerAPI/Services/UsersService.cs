@@ -16,16 +16,16 @@ namespace TaskManagerAPI.Services
 {
     public class UsersService : IUsersService
     {
-        //private readonly AppSettings _appSettings;
+        private readonly AppSettings _appSettings;
         private readonly ApplicationUserManager _applicationUserManager;
         private readonly ApplicationSignInManager _applicationSignInManager;
-        
-        public UsersService(ApplicationUserManager applicationUserManager, ApplicationSignInManager applicationSignInManager)
-        //public UsersService(ApplicationUserManager applicationUserManager, ApplicationSignInManager applicationSignInManager, IOptions<AppSettings> appSettings)
+
+        //public UsersService(ApplicationUserManager applicationUserManager, ApplicationSignInManager applicationSignInManager)
+        public UsersService(ApplicationUserManager applicationUserManager, ApplicationSignInManager applicationSignInManager, IOptions<AppSettings> appSettings)
         {
             this._applicationUserManager = applicationUserManager;
             this._applicationSignInManager = applicationSignInManager;
-            //this._appSettings = appSettings.Value;
+            this._appSettings = appSettings.Value;
         }
 
         public async Task<ApplicationUser> Authenticate(LoginViewModel loginViewModel)
@@ -36,19 +36,20 @@ namespace TaskManagerAPI.Services
                 var applicationUser = await _applicationUserManager.FindByNameAsync(loginViewModel.Username);
                 applicationUser.PasswordHash = null;
 
-                //var tokenHandler = new JwtSecurityTokenHandler();
-                //var key = System.Text.Encoding.ASCII.GetBytes(_appSettings.Secret);
-                //var tokenDescriptor = new Microsoft.IdentityModel.Tokens.SecurityTokenDescriptor()
-                //{
-                //    Subject = new ClaimsIdentity(new Claim[] {
-                //        new Claim(ClaimTypes.Name, applicationUser.Id),
-                //        new Claim(ClaimTypes.Email, applicationUser.Email)
-                //    }),
-                //    Expires = DateTime.UtcNow.AddHours(8),
-                //    SigningCredentials = new Microsoft.IdentityModel.Tokens.SigningCredentials(new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(key), Microsoft.IdentityModel.Tokens.SecurityAlgorithms.HmacSha256Signature)
-                //};
-                //var token = tokenHandler.CreateToken(tokenDescriptor);
-                //applicationUser.Token = tokenHandler.WriteToken(token);
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = System.Text.Encoding.ASCII.GetBytes(_appSettings.Secret);
+                var tokenDescriptor = new Microsoft.IdentityModel.Tokens.SecurityTokenDescriptor()
+                {
+                    Subject = new ClaimsIdentity(new Claim[] {
+                        new Claim(ClaimTypes.Name, applicationUser.Id),
+                        new Claim(ClaimTypes.Email, applicationUser.Email)
+                    }),
+                    Expires = DateTime.UtcNow.AddHours(8),
+                    SigningCredentials = new Microsoft.IdentityModel.Tokens.SigningCredentials(new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(key), 
+                    Microsoft.IdentityModel.Tokens.SecurityAlgorithms.HmacSha256Signature)
+                };
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+                applicationUser.Token = tokenHandler.WriteToken(token);
 
                 return applicationUser;
             }
